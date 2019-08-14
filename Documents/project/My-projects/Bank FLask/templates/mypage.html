@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>
+            MY BARBAD BANK
+        </title>
+   <style>
+   li{
+                display: inline-block;
+                padding-left: 15px;
+                margin-right: 10px;
+                width: 110px;
+                height: 38px;
+                color: aliceblue;
+                background-color:red;
+                font-size: 20px;
+                font-style: italic;
+                border-radius: 2em;
+            }
+            li:hover{
+                transform: scale(1.1);
+            }
+   div{
+       background-color: 
+   }
+   h2{
+       
+   }
+   </style>
+    </head>
+    <body>
+            {% include 'title.html' %}
+    <div>            <ul>
+            <a href="/mypage.html/" ><li>Home</li></a>
+        <a href="/profile.html/"><li>My Profile</li></a>
+        <a href="/banking.html/"><li>Banking</li></a>
+       <a href="/"><li>Log-Out</li></a>
+    </ul>
+
+</div>
+{% if details  %}
+<div>
+<center>
+    <h2>Name : {{details[0][0]}}</h2>
+    <h2>Password :   {{details[0][1]}}</h2>
+    <h2>Current Balance : {{details[0][2]}}</h2>
+    <h2>Account Number :  {{details[0][3]}}</h2>
+</center>    
+</div>
+{% endif %}
+    </body>
+</html>

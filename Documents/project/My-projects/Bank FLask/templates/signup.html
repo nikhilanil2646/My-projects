@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>
+            SIGNUP FORM
+        </title>
+        <style>
+        input{
+        }
+        .form{width: 300px;
+        height: 300;
+        margin-top: 50px;
+        }
+         body{
+             background-image: url("/static/bg2.jpg");
+             background-size: 79pc;
+         }  
+        label{
+            font-style: italic;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 25;  
+        }
+        h1{
+            font-style: italic;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .head{
+            width: auto;
+            height: auto;
+
+        }
+        
+        .hoverclass:hover{
+            transform: scale(1.2);
+            
+        }
+        h3{
+            color:darkslategray
+        }
+        li{
+            display: inline-block;
+            border-radius:2em;
+             width:87px; 
+             height:38px;
+             background-color: orangered; 
+            padding-left: 19px;
+            padding-top: 12px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+            
+        }
+        li:hover{
+          background-color: red;
+        }
+        .fdiv{
+            height: auto;
+            width: 330px;
+        }
+        
+        </style>
+    </head>
+    <body>
+            {% include 'title.html' %}
+            {% block head %}
+            {% endblock %}
+            <div class="fdiv">
+                <a href="/"><li>HOME</li></a>
+                <a href="/signup.html/"><li>SIGNUP</li></a>
+                <a href="/login.html/"><li>LOGIN</li></a>
+            </div>
+            <div class="head">
+           <center>
+               <h1><u>SIGNUP FORM</u></h1>
+           </center>  
+        <center>
+                <h3>{{ message }}</h3>
+        <div class="form">
+        <center>
+            
+        <form method="POST" action="/signup1.html/">
+       
+           <label >ENTER YOUR FULL NAME :</label><br>
+           <input type="text" name="fullname"><br><br>
+
+           <label>SET PASSWORD :</label><br>
+           <input type="password" name="passd"><br><br>
+
+           <label>CONFIRM PASSWORD :</label><br>
+           <input type="password" name="cpassd"><br><br>
+           
+           <label>INITIAL BALANCE :</label><br>
+           <input type="text" name="initialbal"><br><br>
+           <input  class="hoverclass" type="submit"  style="border-radius: 2em; background: darkred; width: 130px ; height: 40px; color: deepskyblue;  ">
+           </center>
+        </div>
+    </center>
+        </form>
+    </body>
+</html>

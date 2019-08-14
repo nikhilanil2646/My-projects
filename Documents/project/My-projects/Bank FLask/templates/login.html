@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>
+            LOGIN BARBAD BANK
+        </title>
+    <style>
+    .div{
+      
+    }
+    .heading{
+            font-style: italic;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+  .hoverclass:hover{
+      transform: scale(1.2);
+  }
+  li{
+            display: inline-block;
+            border-radius:2em;
+             width:87px; 
+             height:38px;
+             background-color: orangered; 
+            padding-left: 19px;
+            padding-top: 12px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+            
+        }
+        li:hover{
+          background-color: red;
+        }
+    </style>
+    </head>
+    <body>
+        
+    <div class= "include">    
+        {% include 'title.html' %}
+               <div class="3include">
+                <a href="/"><li>HOME</li></a>
+                <a href="/signup.html/"><li>SIGNUP</li></a>
+                <a href="/login.html/"><li>LOGIN</li></a>
+            </div>
+    </div>  
+     <div class="div">
+         <center>
+             <h1 class= "heading"><u>LOGIN FORM</u></h1><br>
+             <h3 class="heading">{{ message }}</h3>
+     <form action="/login1.html/" method="POST">
+     <label>ENTER ACCOUT NO : </label><br>
+     <input type="number" name=tempaccountno><br><br>
+     <label>ENTER PASSWORD : </label><br>
+     <input type="password" name=temppass><br><br>
+     <input class= "hoverclass" type="submit" value="LOGIN" style=" border-radius: 2em; background:darkred; width: 130px ; height: 40px ">
+     </form>
+    </center>
+     </div>
+
+
+
+
+
+    </body>
+</html>

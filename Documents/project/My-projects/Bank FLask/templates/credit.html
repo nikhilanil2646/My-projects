@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>
+            CREDIT
+        </title>
+        <body>
+            {% include "mypage.html" %}
+            <div>
+                <center>
+                    {% if message %}
+                    <h3>{{message}}</h3>
+                    {% endif %}
+                 <form method="POST" action="/credit.html/">
+                   
+                    <label>Enter Amount to Credit</label>
+                    <input type="number" name="tempcr" >
+                    <input type="submit">
+
+
+
+                 </form>
+
+
+                </center>
+            </div>
+        </body>
+    </head>
+</html>

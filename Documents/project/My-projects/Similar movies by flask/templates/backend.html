@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title >Movie searched</title>
+    </head>
+    <body>
+            {% include 'home.html' %}
+        <h1>Your searched movie : {{ movie1 }} </h1><br>
+        <h2>Similar movies are : </h2><br>
+        {% for i in range(1,5) %}
+       <ol><l1> <a href="/temp/{{arr[i]}}/" style="color: darkblue; font-size: 28px " >{{arr[i]}}</a><br>
+       </l1></ol>
+        {% endfor %}   
+            <img src={{ url }} alt="Chart" height="420" width="600">
+    </body>
+</html>

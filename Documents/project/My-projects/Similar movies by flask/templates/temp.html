@@ -1,0 +1,22 @@
+<html>
+    <head>
+   <style>
+       li{
+       }
+       li:hover{
+                transform: scale(1.1);
+   </style>
+    </head>
+    <body>
+            {% include 'home.html' %}
+        <h1>
+            <h1>Movie  '{{vr}}' not found. Please type the correct name.</h1>
+            <h1>Suggestion: </h1>
+            <ul>
+                {% for i in range( movie1 | length) %}
+                <a href="/temp/{{movie1[i]}}/" style="color: darkblue; font-size: 25px">{{movie1[i]}}</a><br>
+                {% endfor %}
+            </ul>
+        </h1>
+    </body>
+</html>

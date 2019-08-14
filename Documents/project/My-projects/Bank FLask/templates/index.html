@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>BARBAD BANK</title>
+        <style>
+        body{
+            background-image: url("/static/bg2.jpg");
+            background-size: 79pc;
+            }
+
+        h1{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 48px;
+            font-style: italic;
+            color: maroon;
+        }
+        input{
+            border-radius:2em;
+            margin-top: 100px; 
+           
+             width:100px; 
+             height:50px;
+             background-color: darkred; 
+             animation:bouncy 5s infinite linear;
+         position:relative;
+        }
+        @-webkit-keyframes bounce {
+        0% {
+    transform: scale(1,1) translate(0px, 0px);
+  }
+  
+  10%{
+    transform: scale(1,1.1) translate(0px, -5px); 
+  }20%{
+    transform:  translate(0px, 0px);   
+  }
+}
+.bounce {
+      background:tomato;
+     -webkit-animation: bounce 5s infinite;
+}
+HTML
+        input:hover{
+            transform: scale(1.1);
+            background-color: red;
+        }
+        </style>
+    </head>
+    <body>
+        {% include 'title.html' %}
+              <div >
+           <center>
+       <a href="/signup.html/"><input class="bounce" type=button  value="SIGNUP" style="padding-left: 5px; margin-right: 100px;" /></a>
+       <a href="/login.html/"><input class="bounce" type=button  value="LOGIN" style="padding-left: 5px" /></a>
+           </center> 
+
+       </div>
+    </body>
+</html>
