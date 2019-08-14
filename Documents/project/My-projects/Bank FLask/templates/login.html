@@ -7,6 +7,12 @@
     .div{
       
     }
+    label{
+            font-style: italic;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 25; 
+            width: 80px; 
+        }
     .heading{
             font-style: italic;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -41,16 +47,23 @@
                 <a href="/login.html/"><li>LOGIN</li></a>
             </div>
     </div>  
-     <div class="div">
+     <div class="div" >
          <center>
              <h1 class= "heading"><u>LOGIN FORM</u></h1><br>
              <h3 class="heading">{{ message }}</h3>
      <form action="/login1.html/" method="POST">
-     <label>ENTER ACCOUT NO : </label><br>
-     <input type="number" name=tempaccountno><br><br>
-     <label>ENTER PASSWORD : </label><br>
-     <input type="password" name=temppass><br><br>
-     <input class= "hoverclass" type="submit" value="LOGIN" style=" border-radius: 2em; background:darkred; width: 130px ; height: 40px ">
+     <div style="display: inline-block ;">
+        <label>ENTER ACCOUT NO : </label><br>
+          <label>ENTER PASSWORD : </label><br>
+    </div>
+    
+    <div style="display: inline-block ; height: auto;">
+        <input type="number" name=tempaccountno><br><br>
+        <input type="password" name=temppass><br>
+    
+    </div>
+    
+    <br><br><input class= "hoverclass" type="submit" value="LOGIN" style=" border-radius: 2em; background:darkred; width: 130px ; height: 40px ">
      </form>
     </center>
      </div>

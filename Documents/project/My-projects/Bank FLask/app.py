@@ -25,7 +25,6 @@ def signup1():
      message=""
      acc_no=1000
      fullname=request.form.get("fullname").capitalize()
-     
      passd=request.form.get("passd")
      cpassd=request.form.get("cpassd")
      if passd==cpassd:
@@ -34,13 +33,20 @@ def signup1():
           message="Password doesnt matched"
           return render_template("signup.html",message=message)
      initialbal=request.form.get("initialbal")
+     email=request.form.get("email")
+     day=request.form.get("day")
+     month=request.form.get("month")
+     year=request.form.get("year")
+     mobile=request.form.get("mobile")
+     address=request.form.get("address")
      cmd="select count(*) from user_info"
+     dob=day+"-"+month+"-"+year
      cur.execute(cmd)
      addition=cur.fetchall()
      addition1=addition[0][0]
      acc_no+=addition1
-     cmd="insert into user_info(name,password,bal,acc_no) values(%s,%s,%s,%s)"
-     val=(fullname,passd,initialbal,acc_no)      
+     cmd="insert into user_info(name,password,bal,acc_no,email,DOB,mob,address) values(%s,%s,%s,%s,%s,%s,%s,%s)"
+     val=(fullname,passd,initialbal,acc_no,email,dob,mobile,address)      
      cur.execute(cmd,val)     
      db.commit()
      message = f"Account successfully created. Your Accout no : {acc_no}"

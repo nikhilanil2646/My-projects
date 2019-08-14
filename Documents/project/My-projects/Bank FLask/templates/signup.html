@@ -5,10 +5,12 @@
         </title>
         <style>
         input{
+            height: 29px;
         }
-        .form{width: 300px;
+        .form{padding: auto;
         height: 300;
         margin-top: 50px;
+
         }
          body{
              background-image: url("/static/bg2.jpg");
@@ -17,7 +19,8 @@
         label{
             font-style: italic;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 25;  
+            font-size: 25; 
+            width: 80px; 
         }
         h1{
             font-style: italic;
@@ -77,20 +80,31 @@
         <center>
             
         <form method="POST" action="/signup1.html/">
-       
-           <label >ENTER YOUR FULL NAME :</label><br>
-           <input type="text" name="fullname"><br><br>
-
-           <label>SET PASSWORD :</label><br>
-           <input type="password" name="passd"><br><br>
-
-           <label>CONFIRM PASSWORD :</label><br>
-           <input type="password" name="cpassd"><br><br>
-           
-           <label>INITIAL BALANCE :</label><br>
-           <input type="text" name="initialbal"><br><br>
-           <input  class="hoverclass" type="submit"  style="border-radius: 2em; background: darkred; width: 130px ; height: 40px; color: deepskyblue;  ">
-           </center>
+       <div style="display: inline-block;  height: auto;">
+           <label >FULL NAME :</label><br><br>
+           <label > Email-id :</label><br><br>
+           <label > DOB :</label><br><br>
+           <label > Mobile No. :</label><br><br>
+           <label >Address :</label><br><br>
+           <label>SET PASSWORD :</label><br><br>
+           <label>CONFIRM PASSWORD :</label><br><br>       
+           <label>INITIAL BALANCE :</label><br><br>
+        </div><div style="display: inline-block ;  margin-top: 30px; height: auto;">   
+           <input type="text" name="fullname" placeholder="Full Name"><br><br>
+           <input type="email" name="email" placeholder="Email"><br><br>
+           <input type="number" name="day" style="width: 40px;" placeholder="Day" maxlength="2" max="31">
+           <input type="number" name="month" style="width: 45px;" maxlength="2" max="12" placeholder="Month">
+           <input type="number" name="year" style="width: 50px;" maxlength="4" placeholder="Year"><br><br>
+           <input type="number" name="mobile" placeholder="Mobile No."><br><br>
+           <input type="text" name="address" placeholder="Address"><br><br>
+           <input type="password" name="passd" placeholder="Password"><br><br>
+           <input type="password" name="cpassd" placeholder="Confirm Password"><br><br>
+           <input type="text" name="initialbal" placeholder="Initial Balance"><br><br>
+        </div> 
+           <br><input  class="hoverclass" type="submit"  style="border-radius: 2em; background: darkred; width: 130px ; height: 40px; color: deepskyblue;  ">
+          
+        
+        </center>
         </div>
     </center>
         </form>

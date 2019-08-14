@@ -23,7 +23,7 @@
        background-color: 
    }
    h2{
-       
+    text-align: left; 
    }
    </style>
     </head>
@@ -40,10 +40,27 @@
 {% if details  %}
 <div>
 <center>
-    <h2>Name : {{details[0][0]}}</h2>
-    <h2>Password :   {{details[0][1]}}</h2>
-    <h2>Current Balance : {{details[0][2]}}</h2>
-    <h2>Account Number :  {{details[0][3]}}</h2>
+    <div style="display: inline-block">
+    <h2>Name     : </h2>
+    <h2>Email    : </h2>
+    <h2>Mobile   : </h2>
+    <h2>DOB      : </h2>
+    <h2>Address  : </h2>
+    <h2>Password : </h2>
+    <h2>Current Balance : </h2>
+    <h2>Account Number  : </h2>
+    </div>
+    <div style="display: inline-block">
+     <h2 >{{details[0][0]}}</h2>
+     <h2>{{details[0][4]}}</h2>
+     <h2>{{details[0][6]}}</h2>
+     <h2>{{details[0][5]}}</h2>
+     <h2>{{details[0][7]}}</h2>
+     <h2>{{details[0][1]}}</h2>
+     <h2>{{details[0][2]}}</h2>
+     <h2>{{details[0][3]}}</h2>
+
+    </div>    
 </center>    
 </div>
 {% endif %}
