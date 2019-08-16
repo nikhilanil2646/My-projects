@@ -1,12 +1,14 @@
 from flask import Flask , render_template,request
 import requests
 import MySQLdb as sql
+import random
 
 #Database 
 db=sql.connect(host="127.0.0.1",port=3306,user="root",password="",database="bank")
 cur=db.cursor()
 accessaccno=0000
-
+OTP=0000
+globalmessage=""
 app = Flask(__name__)
 @app.route("/")
 def index():
@@ -49,8 +51,22 @@ def signup1():
      val=(fullname,passd,initialbal,acc_no,email,dob,mobile,address)      
      cur.execute(cmd,val)     
      db.commit()
-     message = f"Account successfully created. Your Accout no : {acc_no}"
-     return render_template("login.html",message=message)
+     global globalmessage
+     globalmessage = f"Account successfully created. Your Accout no : {acc_no}" 
+     print("global message is: ",globalmessage)
+     url = "https://www.fast2sms.com/dev/bulk"
+     global OTP
+     OTP=random.randrange(1111,9999)
+     payload = f"sender_id=FSTSMS&message={OTP}&language=english&route=p&numbers=7988816585"
+     headers = {
+     'authorization': "FrfdjRCDYXlIMJktOxey0QTcZpL5gHq2Bm6GV39i7SKAsvz4awnxFIWMg4iUyr3OhEjPBbkJluvZHYAD",
+     'Content-Type': "application/x-www-form-urlencoded"
+     }
+     response = requests.request("POST", url, data=payload, headers=headers)
+
+
+     message=""
+     return render_template("verify.html",message=message)
 @app.route("/login1.html/",methods=['POST','GET'])
 def login1():
    
@@ -141,8 +157,25 @@ def debit():
              message="Insufficient Balance"
      db.commit()
      return render_template("debit.html",message=message)
-
-
+@app.route("/verify.html/",methods=['POST','GET'])
+def verify():
+     if request.method=='POST':
+          message=""
+          tempOTP=request.form.get("tempOTP")
+          global OTP
+          print("ENtred OTP:",tempOTP)
+          print("type of tempotp",type(tempOTP))
+          
+          print("REal OTP :",OTP)
+          print("type of otp",type(OTP))
+           
+          if int(OTP)==int(tempOTP):
+               message="Great! Mobile Number has been verified"
+          else:
+               message="Sorry! You have entered an invalid OTP."
+               return render_template("verify.html",message=message)     
+     print("global message is: ",globalmessage)
+     return render_template("login.html",globalmessage=globalmessage,message=message)
 
 
 

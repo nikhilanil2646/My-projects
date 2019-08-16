@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>
+            Mobile Number Verification
+        </title>
+    </head>
+    <body>
+        {% include "title.html" %}
+        <div>
+            <center>
+
+                <h3>{{ message }}</h3>
+                <h1>OTP has been sent to your given mobile number.</h1><br><br>
+                <form method="POST" action="/verify.html/">
+                <h1>Enter the OTP:</h1>
+                <input type="number" name="tempOTP" placeholder="OTP"> 
+                <input type="submit">
+                </form>
+            </center>
+        </div>
+    </body>
+</html>
