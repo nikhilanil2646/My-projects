@@ -176,7 +176,9 @@ def verify():
                return render_template("verify.html",message=message)     
      print("global message is: ",globalmessage)
      return render_template("login.html",globalmessage=globalmessage,message=message)
-
+@app.route("/aboutme.html/")
+def aboutme():
+     return render_template("aboutme.html")
 
 
 
